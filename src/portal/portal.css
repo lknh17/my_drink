@@ -1,0 +1,1036 @@
+/* ==========================================================================
+   「酌味 · 饮品全集」Grand Portal Promenade & Architectural Triptych
+   Museum Atrium #F6F3EC · Tea Celadon #35685F · Cellar Obsidian #13100E · Roastery Parchment #F4EFE6
+   ========================================================================== */
+
+.portal-promenade {
+  min-height: 100vh;
+  background-color: #F6F3EC;
+  background-image:
+    radial-gradient(ellipse 90% 38% at 50% -6%, rgba(53, 104, 95, 0.08), transparent 65%),
+    radial-gradient(circle at 86% 24%, rgba(200, 109, 59, 0.06), transparent 45%);
+  color: #1C1B19;
+  padding-bottom: 5rem;
+}
+
+/* Sticky Museum Header */
+.portal-header {
+  position: sticky;
+  top: 0;
+  z-index: 45;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 1.85rem;
+  background: rgba(252, 251, 247, 0.93);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid #DCD5C5;
+  box-shadow: 0 4px 20px rgba(28, 27, 25, 0.04);
+  pointer-events: none;
+}
+
+.portal-brand {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.portal-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 5px;
+  background: #A6402C;
+  color: #FCFBF7;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  border: 1.5px solid rgba(252, 251, 247, 0.9);
+  box-shadow: 0 0 0 1.5px #A6402C, 0 4px 10px rgba(166, 64, 44, 0.22);
+  flex-shrink: 0;
+}
+
+.portal-kicker {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.69rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #736D64;
+}
+
+.portal-title-main {
+  font-family: var(--font-serif);
+  font-size: 1.16rem;
+  font-weight: 700;
+  color: #1C1B19;
+  letter-spacing: 0.02em;
+}
+
+.portal-header-actions {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.portal-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.44rem;
+  padding: 0.44rem 0.92rem;
+  border-radius: 999px;
+  border: 1px solid #C8BFAE;
+  background: #FCFBF7;
+  color: #36332E;
+  font-size: 0.84rem;
+  font-weight: 500;
+}
+
+.portal-action-btn:hover {
+  border-color: #35685F;
+  color: #35685F;
+  background: #F1ECE1;
+}
+
+.portal-action-btn.passport {
+  background: #1C1B19;
+  border-color: #1C1B19;
+  color: #FCFBF7;
+}
+
+.portal-action-btn.passport:hover {
+  background: #35685F;
+  border-color: #35685F;
+}
+
+.portal-passport-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 20px;
+  padding: 0 0.38rem;
+  border-radius: 999px;
+  background: #D4943A;
+  color: #16110D;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+/* Main Promenade Container */
+.portal-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.4rem;
+}
+
+/* Atrium Manifesto Banner */
+.portal-atrium-intro {
+  margin-top: 2rem;
+  padding: 1.85rem 2.2rem;
+  border-radius: 18px;
+  border: 1px solid #DBD3C2;
+  background:
+    linear-gradient(135deg, rgba(252, 251, 247, 0.96) 0%, rgba(242, 237, 226, 0.94) 100%);
+  box-shadow: 0 10px 30px rgba(28, 27, 25, 0.05);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.portal-atrium-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #35685F;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.portal-atrium-intro h1 {
+  font-size: clamp(1.78rem, 2.9vw, 2.45rem);
+  color: #1C1B19;
+  line-height: 1.24;
+}
+
+.portal-atrium-intro h1 span {
+  color: #35685F;
+}
+
+.portal-atrium-desc {
+  margin-top: 0.68rem;
+  max-width: 68ch;
+  font-size: 0.95rem;
+  color: #4A463F;
+  line-height: 1.72;
+}
+
+.portal-atrium-quicknav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.48rem;
+}
+
+.portal-anchor-chip {
+  padding: 0.4rem 0.82rem;
+  border-radius: 999px;
+  border: 1px solid #C8BFAE;
+  background: #FCFBF7;
+  color: #43403B;
+  font-size: 0.8rem;
+}
+
+.portal-anchor-chip:hover {
+  border-color: #1C1B19;
+  background: #1C1B19;
+  color: #FCFBF7;
+}
+
+/* ==========================================================================
+   1. Architectural Triptych (三座独立美学展馆立面三联屏)
+   ========================================================================== */
+
+.portal-triptych {
+  display: grid;
+  grid-template-columns: minmax(0, 1.16fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.3rem;
+  align-items: stretch;
+}
+
+.portal-facade {
+  border-radius: 20px;
+  padding: 1.65rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.portal-facade:hover {
+  transform: translateY(-4px);
+}
+
+.portal-facade-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.portal-building-no {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.portal-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.36rem;
+  padding: 0.2rem 0.62rem;
+  border-radius: 999px;
+  font-size: 0.73rem;
+  font-weight: 600;
+}
+
+.portal-facade-motif-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.portal-facade-title {
+  font-family: var(--font-serif);
+  font-size: 1.56rem;
+  line-height: 1.25;
+}
+
+.portal-facade-subtitle {
+  margin-top: 0.25rem;
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
+.portal-facade-summary {
+  font-size: 0.88rem;
+  line-height: 1.68;
+}
+
+/* Facade I: 茗典 · 中华茶馆 (Ru-kiln Celadon #35685F & Song Rice-Paper) */
+.portal-facade.tea-facade {
+  background:
+    radial-gradient(circle at 92% 12%, rgba(53, 104, 95, 0.14), transparent 48%),
+    linear-gradient(170deg, #FCFBF7 0%, #F3EFE4 100%);
+  border: 1.5px solid rgba(53, 104, 95, 0.45);
+  box-shadow: 0 18px 42px rgba(30, 52, 47, 0.1), inset 0 1px 0 #FFFFFF;
+  color: #1E2421;
+}
+
+.tea-facade::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 5px;
+  background: linear-gradient(90deg, #35685F 0%, #588B57 55%, #9A5B25 100%);
+}
+
+.tea-facade .portal-building-no {
+  color: #35685F;
+}
+
+.tea-facade .portal-status-pill {
+  background: rgba(53, 104, 95, 0.14);
+  border: 1px solid rgba(53, 104, 95, 0.4);
+  color: #244D46;
+}
+
+.tea-facade .portal-facade-title {
+  color: #1E2421;
+}
+
+.tea-facade .portal-facade-subtitle {
+  color: #5C6B64;
+}
+
+.tea-facade .portal-facade-summary {
+  color: #3A433E;
+}
+
+.tea-stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.5rem;
+  padding: 0.72rem;
+  border-radius: 12px;
+  background: rgba(53, 104, 95, 0.07);
+  border: 1px solid rgba(53, 104, 95, 0.2);
+}
+
+.tea-stat-item strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  color: #244D46;
+}
+
+.tea-stat-item span {
+  font-size: 0.72rem;
+  color: #596660;
+}
+
+.tea-subspace-box {
+  padding: 0.75rem 0.85rem;
+  border-radius: 12px;
+  background: #FCFBF7;
+  border: 1px solid #DCD6C6;
+  display: flex;
+  flex-direction: column;
+  gap: 0.48rem;
+}
+
+.tea-subspace-label {
+  font-family: var(--font-mono);
+  font-size: 0.69rem;
+  letter-spacing: 0.08em;
+  color: #68736D;
+}
+
+.tea-subspace-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tea-sub-pill {
+  padding: 0.28rem 0.64rem;
+  border-radius: 999px;
+  border: 1px solid rgba(53, 104, 95, 0.34);
+  background: #F7F5EE;
+  color: #264F48;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.tea-sub-pill:hover {
+  background: #35685F;
+  border-color: #35685F;
+  color: #FCFBF7;
+}
+
+.portal-cta-btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 0.78rem 1.1rem;
+  border-radius: 11px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.portal-cta-btn.tea-cta {
+  background: #35685F;
+  color: #FCFBF7;
+  box-shadow: 0 8px 20px rgba(53, 104, 95, 0.26);
+}
+
+.portal-cta-btn.tea-cta:hover {
+  background: #28524A;
+}
+
+/* Facade II: 醺典 · 中外酒馆 (Suet porcelain, cinnabar seal, malt gold) */
+.portal-facade.wine-facade {
+  background:
+    radial-gradient(circle at 88% 16%, rgba(181, 133, 42, 0.2), transparent 42%),
+    radial-gradient(circle at 12% 90%, rgba(166, 33, 33, 0.1), transparent 46%),
+    linear-gradient(155deg, #fffdf8 0%, #faf5e9 54%, #f3e5c8 100%);
+  border: 2px solid #b5852a;
+  box-shadow: 0 20px 44px rgba(93, 58, 25, 0.16), inset 0 1px 0 #fff;
+  color: #261d17;
+}
+
+.wine-facade::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 5px;
+  background: linear-gradient(90deg, #a62121 0 33%, #b5852a 33% 66%, #3a6b34 66% 100%);
+}
+
+.wine-facade .portal-building-no {
+  color: #9a5b25;
+}
+
+.wine-facade .portal-status-pill {
+  background: #a62121;
+  border: 1px solid #7f1515;
+  color: #fffaf0;
+}
+
+.wine-facade .portal-facade-title {
+  color: #261d17;
+}
+
+.wine-facade .portal-facade-subtitle {
+  color: #8b4b24;
+}
+
+.wine-facade .portal-facade-summary {
+  color: #59483b;
+}
+
+.wine-highlights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.48rem;
+  padding: 0.8rem 0.9rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(181, 133, 42, 0.35);
+}
+
+.wine-hl-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #49382d;
+}
+
+.wine-hl-row small {
+  font-family: var(--font-mono);
+  font-size: 0.71rem;
+  color: #9c6823;
+  flex-shrink: 0;
+}
+
+.portal-cta-btn.wine-cta {
+  background: linear-gradient(135deg, #a62121 0%, #7c1c1c 100%);
+  border: 1px solid #b5852a;
+  color: #fffaf0;
+  box-shadow: 0 8px 24px rgba(122, 35, 35, 0.24);
+}
+
+.portal-cta-btn.wine-cta:hover {
+  filter: brightness(1.08);
+}
+
+.wine-wing-pills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+
+.wine-wing-pills button {
+  padding: 0.45rem 0.35rem;
+  border: 1px solid rgba(166, 33, 33, 0.3);
+  border-radius: 999px;
+  background: #fffaf0;
+  color: #7c2722;
+  font: 700 0.72rem var(--font-serif);
+  cursor: pointer;
+}
+
+/* Facade III: 咖典 · 精品咖啡馆 (Washed Parchment #F4EFE6, Espresso #2B1911, Maillard #C86D3B) */
+.portal-facade.coffee-facade {
+  background-color: #F4EFE6;
+  background-image:
+    linear-gradient(rgba(43, 25, 17, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 25, 17, 0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+  border: 2px solid #2B1911;
+  border-radius: 14px;
+  box-shadow: 6px 6px 0 rgba(43, 25, 17, 0.16);
+  color: #2B1911;
+}
+
+.coffee-facade::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 5px;
+  background: linear-gradient(90deg, #2B1911 0%, #C86D3B 58%, #2C6E63 100%);
+}
+
+.coffee-facade .portal-building-no {
+  color: #C86D3B;
+}
+
+.coffee-facade .portal-status-pill {
+  background: #2B1911;
+  color: #FAF7F1;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+}
+
+.coffee-facade .portal-facade-title {
+  color: #2B1911;
+}
+
+.coffee-facade .portal-facade-subtitle {
+  color: #6E5346;
+}
+
+.coffee-facade .portal-facade-summary {
+  color: #4A3226;
+}
+
+.coffee-spec-box {
+  padding: 0.78rem 0.88rem;
+  background: #FAF7F1;
+  border: 1.5px solid #2B1911;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.46rem;
+}
+
+.coffee-spec-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: #2B1911;
+}
+
+.coffee-spec-line code {
+  font-family: var(--font-mono);
+  font-size: 0.71rem;
+  color: #B23A2C;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.coffee-volume-pills {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin-top: 0.35rem;
+}
+
+.coffee-volume-pills button {
+  padding: 0.43rem 0.3rem;
+  border: 1px solid rgba(44, 110, 99, 0.42);
+  border-radius: 999px;
+  background: #f4efe6;
+  color: #2b514a;
+  font: 700 0.7rem var(--font-serif);
+  cursor: pointer;
+}
+
+.coffee-volume-pills button:hover {
+  background: #2c6e63;
+  color: #faf7f1;
+}
+
+.portal-cta-btn.coffee-cta {
+  background: #C86D3B;
+  border: 1.5px solid #2B1911;
+  border-radius: 6px;
+  color: #FAF7F1;
+  box-shadow: 3px 3px 0 #2B1911;
+}
+
+.portal-cta-btn.coffee-cta:hover {
+  background: #2B1911;
+  color: #FAF7F1;
+}
+
+/* ==========================================================================
+   Shared Section Header on Promenade
+   ========================================================================== */
+
+.portal-sec-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.85rem;
+  border-bottom: 1.5px solid #D6CEBC;
+  margin-bottom: 1.4rem;
+}
+
+.portal-sec-kicker {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #9A5B25;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.portal-sec-header h2 {
+  font-size: 1.52rem;
+  color: #1C1B19;
+}
+
+.portal-sec-sub {
+  font-size: 0.85rem;
+  color: #6B655C;
+}
+
+/* ==========================================================================
+   2. Three-Drink Ontology Matrix (三饮知识本体对照长卷)
+   ========================================================================== */
+
+.portal-ontology-scroll {
+  background: #FCFBF7;
+  border: 1px solid #D8D0BE;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(28, 27, 25, 0.06);
+  overflow: hidden;
+}
+
+.portal-ontology-head-grid {
+  display: grid;
+  grid-template-columns: 180px repeat(3, minmax(0, 1fr));
+  background: #EFEAE0;
+  border-bottom: 1.5px solid #D5CCB9;
+}
+
+.portal-onto-corner {
+  padding: 1rem 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #6E675E;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid #DAD2C1;
+}
+
+.portal-onto-col-head {
+  padding: 1rem 1.2rem;
+  border-right: 1px solid #DAD2C1;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.portal-onto-col-head:last-child {
+  border-right: none;
+}
+
+.portal-onto-col-head strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.04rem;
+}
+
+.portal-onto-col-head small {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: #6E675E;
+}
+
+.portal-ontology-row {
+  display: grid;
+  grid-template-columns: 180px repeat(3, minmax(0, 1fr));
+  border-bottom: 1px solid #E6E0D2;
+}
+
+.portal-ontology-row:last-child {
+  border-bottom: none;
+}
+
+.portal-onto-axis {
+  padding: 1.05rem 1.1rem;
+  background: #F6F3EC;
+  border-right: 1px solid #E0D8C8;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.portal-onto-axis code {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #9A5B25;
+}
+
+.portal-onto-axis strong {
+  font-family: var(--font-serif);
+  font-size: 0.94rem;
+  color: #1C1B19;
+}
+
+.portal-onto-cell {
+  padding: 1.05rem 1.2rem;
+  border-right: 1px solid #ECE6D9;
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+}
+
+.portal-onto-cell:last-child {
+  border-right: none;
+}
+
+.portal-onto-cell strong {
+  font-size: 0.88rem;
+  color: #1C1B19;
+}
+
+.portal-onto-cell p {
+  font-size: 0.82rem;
+  color: #4E4A43;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   3. 十二时辰引饮推荐流 (12-Shichen Drinking Stream)
+   ========================================================================== */
+
+.portal-shichen-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-bottom: 1.15rem;
+}
+
+.portal-shichen-tab {
+  padding: 0.78rem 0.85rem;
+  border-radius: 12px;
+  border: 1px solid #D4CCBA;
+  background: #FCFBF7;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+}
+
+.portal-shichen-tab:hover {
+  border-color: #35685F;
+}
+
+.portal-shichen-tab.active {
+  background: #1C1B19;
+  border-color: #1C1B19;
+  color: #FCFBF7;
+  box-shadow: 0 10px 24px rgba(28, 27, 25, 0.16);
+}
+
+.portal-shichen-time {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  opacity: 0.75;
+}
+
+.portal-shichen-tab strong {
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+}
+
+.portal-shichen-tab span {
+  font-size: 0.75rem;
+  opacity: 0.82;
+}
+
+.portal-shichen-banner {
+  padding: 1rem 1.35rem;
+  border-radius: 14px;
+  background: #EFEAE0;
+  border: 1px solid #D8D0BE;
+  margin-bottom: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.portal-shichen-banner p {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: #2E2B26;
+}
+
+.portal-shichen-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+
+.portal-drink-card {
+  padding: 1.2rem 1.25rem;
+  border-radius: 15px;
+  border: 1px solid #DAD2C0;
+  background: #FCFBF7;
+  box-shadow: 0 6px 18px rgba(28, 27, 25, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.portal-drink-card:hover {
+  transform: translateY(-3px);
+  border-color: #35685F;
+}
+
+.portal-drink-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.portal-hall-tag {
+  padding: 0.16rem 0.54rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.portal-hall-tag.tea {
+  background: rgba(53, 104, 95, 0.12);
+  color: #265149;
+}
+
+.portal-hall-tag.wine {
+  background: rgba(122, 35, 50, 0.12);
+  color: #7A2332;
+}
+
+.portal-hall-tag.coffee {
+  background: rgba(200, 109, 59, 0.14);
+  color: #9A481D;
+}
+
+.portal-drink-card h3 {
+  font-size: 1.08rem;
+  color: #1C1B19;
+  line-height: 1.35;
+}
+
+.portal-drink-origin {
+  font-size: 0.78rem;
+  color: #736D64;
+}
+
+.portal-drink-reason {
+  font-size: 0.83rem;
+  color: #43403B;
+  line-height: 1.6;
+}
+
+.portal-drink-foot {
+  margin-top: auto;
+  padding-top: 0.68rem;
+  border-top: 1px dashed #E2DAC9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.portal-jump-link {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #35685F;
+}
+
+.portal-jump-link:hover {
+  text-decoration: underline;
+}
+
+.portal-fp-btns {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.portal-fp-mini {
+  padding: 0.24rem 0.58rem;
+  border-radius: 6px;
+  border: 1px solid #C8BFAE;
+  background: #F6F3EC;
+  color: #3A3732;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.portal-fp-mini.on {
+  background: #35685F;
+  border-color: #35685F;
+  color: #FCFBF7;
+}
+
+.portal-fp-mini.wish {
+  background: #A6402C;
+  border-color: #A6402C;
+  color: #FCFBF7;
+}
+
+/* ==========================================================================
+   4. 中华茶馆 · 镇馆名茶速览长廊 (Flagship Tea Monograph Gallery)
+   ========================================================================== */
+
+.portal-tea-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.05rem;
+}
+
+.portal-tea-showcase-card {
+  padding: 1.15rem 1.2rem;
+  border-radius: 15px;
+  border: 1px solid #D9D2C2;
+  background: linear-gradient(180deg, #FCFBF7 0%, #F6F3EA 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.58rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.portal-tea-showcase-card:hover {
+  transform: translateY(-3px);
+  border-color: #35685F;
+  box-shadow: 0 12px 26px rgba(53, 104, 95, 0.1);
+}
+
+.portal-tea-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.portal-tea-showcase-card h3 {
+  font-size: 1.06rem;
+  color: #1E2421;
+}
+
+.portal-tea-aromas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.32rem;
+}
+
+.portal-aroma-pill {
+  padding: 0.12rem 0.46rem;
+  border-radius: 4px;
+  background: #EFECE2;
+  border: 1px solid #DCD6C6;
+  font-size: 0.72rem;
+  color: #49534E;
+}
+
+@media (max-width: 1120px) {
+  .portal-triptych {
+    grid-template-columns: 1fr;
+  }
+  .portal-ontology-head-grid,
+  .portal-ontology-row {
+    grid-template-columns: 1fr;
+  }
+  .portal-onto-corner {
+    display: none;
+  }
+  .portal-onto-axis {
+    border-right: none;
+    border-bottom: 1px solid #E0D8C8;
+  }
+  .portal-shichen-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .portal-shichen-cards,
+  .portal-tea-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .portal-header {
+    padding: 0.75rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .portal-container {
+    padding: 0 1rem;
+  }
+  .portal-atrium-intro {
+    padding: 1.35rem 1.2rem;
+  }
+  .tea-stats-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .portal-shichen-tabs,
+  .portal-shichen-cards,
+  .portal-tea-gallery {
+    grid-template-columns: 1fr;
+  }
+}

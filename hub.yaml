@@ -1,0 +1,49 @@
+# 这个仓库怎么跑，由这个仓库自己说了算。
+# 中枢（my_web_center）只负责「放在哪、归哪类、这台机器跑不跑」。
+schemaVersion: 1
+
+projects:
+  - id: my-drink
+    name: 酌味
+    description: 饮品全集 — 茶·酒·咖啡博物图志，涵盖茗典中华茶馆、醺典中外酒馆与咖典精品咖啡馆
+    icon: "🍵"
+    mode: service
+    route: /drink/
+    tags: [Vite, 茶道, 饮品, 地图]
+
+    services:
+      - id: web
+        name: 酌味馆
+        portHint: 5197
+        cmd:
+          - "${node}"
+          - node_modules/vite/bin/vite.js
+          - --host
+          - "${host}"
+          - --port
+          - "${port}"
+        routes:
+          - prefix: /drink/
+            ws: true
+        health:
+          type: http
+          path: /drink/favicon.ico
+          expectStatus: [200]
+          startupGraceMs: 20000
+
+    setup:
+      - name: 装依赖
+        skipIfExists: node_modules
+        cmd: ["npm", "install"]
+
+    requires:
+      node: ">=20"
+      paths:
+        - node_modules/vite
+        - public/favicon.ico
+
+    effects:
+      - kind: network
+        detail: 地图底图会请求高德与 Esri 在线街区、地形和卫星瓦片并缓存到本地
+
+    startPolicy: autostart-ok

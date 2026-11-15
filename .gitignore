@@ -1,0 +1,14 @@
+node_modules
+dist
+.DS_Store
+*.local
+.env
+.env.*
+!.env.example
+public/tiles-cache
+public/.tiles-cache-local
+.server.log
+*.log
+.vite
+__pycache__/
+*.py[cod]

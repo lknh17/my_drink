@@ -1,0 +1,887 @@
+/* ==========================================================================
+   「咖典 · 精品咖啡馆」Washed Parchment & Nordic Roastery Lab Aesthetic
+   Parchment #F4EFE6 · Espresso Ink #2B1911 · Maillard Caramel #C86D3B · Washed Teal #2C6E63
+   ========================================================================== */
+
+.coffee-hall {
+  min-height: 100vh;
+  background-color: #F4EFE6;
+  background-image:
+    linear-gradient(rgba(43, 25, 17, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 25, 17, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: #2B1911;
+  padding-bottom: 4.5rem;
+}
+
+.coffee-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 45;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1.75rem;
+  background: rgba(250, 247, 241, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid #2B1911;
+}
+
+.coffee-stamp-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #2B1911;
+  color: #FAF7F1;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 2px solid #C86D3B;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 #C86D3B;
+  flex-shrink: 0;
+}
+
+.coffee-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.82rem;
+  border-radius: 4px;
+  border: 1.5px solid #2B1911;
+  background: #FAF7F1;
+  color: #2B1911;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.coffee-nav-btn:hover {
+  background: #2B1911;
+  color: #FAF7F1;
+}
+
+.coffee-nav-btn.accent {
+  background: #C86D3B;
+  border-color: #2B1911;
+  color: #FAF7F1;
+  box-shadow: 2px 2px 0 #2B1911;
+}
+
+.coffee-nav-btn.accent:hover {
+  background: #B23A2C;
+}
+
+.coffee-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.7rem;
+}
+
+/* Swiss Roastery Spec-Sheet Hero */
+.coffee-hero-sheet {
+  margin-top: 1.8rem;
+  background: #FAF7F1;
+  border: 2px solid #2B1911;
+  border-radius: 6px;
+  box-shadow: 6px 6px 0 rgba(43, 25, 17, 0.14);
+  overflow: hidden;
+}
+
+.coffee-hero-telemetry-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.58rem 1.4rem;
+  background: #2B1911;
+  color: #F4EFE6;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+}
+
+.coffee-hero-stamp {
+  display: inline-block;
+  padding: 0.14rem 0.55rem;
+  background: #C86D3B;
+  color: #FAF7F1;
+  font-weight: 700;
+  border-radius: 2px;
+}
+
+.coffee-hero-body {
+  padding: 2rem 2.2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(270px, 0.8fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.coffee-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.82rem, 2.9vw, 2.48rem);
+  color: #2B1911;
+  line-height: 1.24;
+}
+
+.coffee-hero-title span {
+  color: #C86D3B;
+}
+
+.coffee-hero-lead {
+  margin-top: 0.85rem;
+  font-size: 0.96rem;
+  color: #4E3529;
+  line-height: 1.74;
+  max-width: 66ch;
+}
+
+.coffee-swiss-kpis {
+  margin-top: 1.35rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1.5px solid #2B1911;
+  background: #F4EFE6;
+}
+
+.coffee-kpi-cell {
+  padding: 0.72rem 0.85rem;
+  border-right: 1.5px solid #2B1911;
+}
+
+.coffee-kpi-cell:last-child {
+  border-right: none;
+}
+
+.coffee-kpi-code {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: #7D6355;
+  text-transform: uppercase;
+}
+
+.coffee-kpi-cell strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  color: #2B1911;
+  margin-top: 0.15rem;
+}
+
+.coffee-kpi-cell small {
+  font-size: 0.75rem;
+  color: #5E4335;
+}
+
+.coffee-hero-diagram {
+  padding: 1.15rem;
+  border: 1.5px dashed #A68E80;
+  background: #F4EFE6;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.coffee-diagram-caption {
+  margin-top: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: #6B5144;
+  text-align: center;
+}
+
+/* Section Headers */
+.coffee-sec-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #2B1911;
+  margin-bottom: 1.3rem;
+}
+
+.coffee-sec-kicker {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #C86D3B;
+  font-weight: 700;
+  margin-bottom: 0.22rem;
+}
+
+.coffee-sec-head h2 {
+  font-size: 1.45rem;
+  color: #2B1911;
+}
+
+.coffee-sec-sub {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #6E5346;
+}
+
+/* 1. Processing Method Comparator */
+.coffee-process-tabs {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+
+.coffee-proc-tab {
+  padding: 0.65rem 0.6rem;
+  border: 1.5px solid #C4B399;
+  border-radius: 4px;
+  background: #FAF7F1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.coffee-proc-tab:hover {
+  border-color: #2B1911;
+}
+
+.coffee-proc-tab.active {
+  background: #2B1911;
+  border-color: #2B1911;
+  color: #FAF7F1;
+  box-shadow: 3px 3px 0 #C86D3B;
+}
+
+.coffee-proc-tab small {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  opacity: 0.78;
+}
+
+.coffee-proc-tab strong {
+  font-size: 0.88rem;
+}
+
+.coffee-process-inspector {
+  background: #FAF7F1;
+  border: 2px solid #2B1911;
+  border-radius: 6px;
+  padding: 1.4rem 1.6rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.85fr);
+  gap: 1.5rem;
+}
+
+.coffee-proc-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.85rem;
+}
+
+.coffee-spec-cell {
+  padding: 0.78rem 0.9rem;
+  background: #F4EFE6;
+  border: 1px solid #C4B399;
+  border-radius: 4px;
+}
+
+.coffee-spec-cell.wide {
+  grid-column: 1 / -1;
+}
+
+.coffee-mono-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.69rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7D6355;
+  margin-bottom: 0.25rem;
+}
+
+.coffee-spec-cell p {
+  font-size: 0.86rem;
+  color: #2B1911;
+  line-height: 1.6;
+}
+
+.coffee-mucilage-card {
+  padding: 1.05rem 1.15rem;
+  background: #EFE7DA;
+  border: 1.5px solid #2B1911;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.coffee-bar-track {
+  height: 10px;
+  background: #DCD0BC;
+  border: 1px solid #2B1911;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.coffee-bar-fill {
+  height: 100%;
+  transition: width 0.24s ease;
+}
+
+/* 2. Global Coffee Belt + China Yunnan Origins */
+.coffee-zone-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.coffee-zone-pill {
+  padding: 0.36rem 0.78rem;
+  border: 1.5px solid #2B1911;
+  border-radius: 999px;
+  background: #FAF7F1;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.coffee-zone-pill.active {
+  background: #2C6E63;
+  border-color: #2B1911;
+  color: #FAF7F1;
+}
+
+.coffee-origin-grid {
+  margin-top: 1.05rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.95rem;
+}
+
+.coffee-world-map {
+  margin-bottom: 0;
+}
+
+.coffee-world-map header {
+  background: #FAF7F1;
+  border-color: #2B1911;
+}
+
+.coffee-craft-deck {
+  --craft-accent: #C86D3B;
+}
+
+.coffee-origin-card {
+  padding: 1.05rem 1.1rem;
+  background: #FAF7F1;
+  border: 1.5px solid #C4B399;
+  border-top: 4px solid #2B1911;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.coffee-origin-card.yunnan {
+  border-top-color: #B23A2C;
+  background: linear-gradient(180deg, #FDF8F3 0%, #FAF7F1 100%);
+}
+
+.coffee-origin-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.71rem;
+  color: #7D6355;
+}
+
+.coffee-origin-card h3 {
+  font-size: 1rem;
+  color: #2B1911;
+}
+
+.coffee-origin-desc {
+  font-size: 0.82rem;
+  color: #4E3529;
+  line-height: 1.58;
+}
+
+.coffee-varietal-row {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.32rem;
+}
+
+.coffee-tag {
+  padding: 0.14rem 0.48rem;
+  border: 1px solid #C4B399;
+  background: #F4EFE6;
+  border-radius: 3px;
+  font-size: 0.73rem;
+  color: #3D261C;
+}
+
+.coffee-tag.mono {
+  font-family: var(--font-mono);
+  font-size: 0.71rem;
+}
+
+/* 3. Roast Agtron Curve & Golden Cup Extraction Bench */
+.coffee-lab-bench {
+  background: #FAF7F1;
+  border: 2px solid #2B1911;
+  border-radius: 6px;
+  box-shadow: 6px 6px 0 rgba(43, 25, 17, 0.12);
+  overflow: hidden;
+}
+
+.coffee-bench-banner {
+  padding: 0.72rem 1.4rem;
+  background: #EAE2D3;
+  border-bottom: 1.5px solid #2B1911;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.coffee-lot-serial {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: #2B1911;
+  color: #FAF7F1;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.coffee-bench-grid {
+  padding: 1.5rem 1.6rem;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.25fr);
+  gap: 1.6rem;
+}
+
+.coffee-roast-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.coffee-curve-box {
+  padding: 0.9rem;
+  background: #F4EFE6;
+  border: 1.5px solid #2B1911;
+  border-radius: 4px;
+}
+
+.coffee-curve-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.coffee-sensory-box {
+  padding: 0.85rem 1rem;
+  background: #F4EFE6;
+  border: 1px solid #C4B399;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.coffee-radar-svg {
+  width: 185px;
+  height: 175px;
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.coffee-recipe-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.coffee-recipe-title {
+  font-size: 1.38rem;
+  color: #2B1911;
+}
+
+.coffee-bench-photo {
+  max-width: 560px;
+}
+
+.coffee-plain-telemetry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+}
+
+.coffee-plain-telemetry span {
+  padding: 0.32rem 0.62rem;
+  border: 1px solid #C86D3B;
+  border-radius: 999px;
+  background: #FFF7ED;
+  color: #6F321C;
+  font-size: 0.76rem;
+  font-weight: 700;
+  cursor: help;
+}
+
+.coffee-recipe-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border: 1.5px solid #2B1911;
+  background: #F4EFE6;
+}
+
+.coffee-param-box {
+  padding: 0.65rem 0.8rem;
+  border-right: 1px solid #C4B399;
+  border-bottom: 1px solid #C4B399;
+}
+
+.coffee-param-box:nth-child(3n) {
+  border-right: none;
+}
+
+.coffee-param-box strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.96rem;
+  color: #2B1911;
+  margin-top: 0.14rem;
+}
+
+.coffee-stages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.52rem;
+}
+
+.coffee-stage-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.65rem 0.85rem;
+  background: #F4EFE6;
+  border: 1px solid #C4B399;
+  border-left: 4px solid #C86D3B;
+  border-radius: 3px;
+}
+
+.coffee-stage-idx {
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  font-weight: 700;
+  padding: 0.12rem 0.42rem;
+  background: #2B1911;
+  color: #FAF7F1;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.coffee-stage-step p {
+  font-size: 0.85rem;
+  color: #2B1911;
+  line-height: 1.55;
+}
+
+.coffee-bench-actions {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #C4B399;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.coffee-fp-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.coffee-fp-btn {
+  padding: 0.46rem 0.95rem;
+  border: 1.5px solid #2B1911;
+  border-radius: 4px;
+  background: #FAF7F1;
+  color: #2B1911;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.coffee-fp-btn.tasted {
+  background: #2C6E63;
+  color: #FAF7F1;
+}
+
+.coffee-fp-btn.wished {
+  background: #B23A2C;
+  color: #FAF7F1;
+}
+
+/* 4. Perforated Bean-Bag Lot Tag Cards */
+.coffee-lot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.coffee-lot-card {
+  position: relative;
+  background: #FAF7F1;
+  border: 1.5px solid #2B1911;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.coffee-lot-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 5px 5px 0 #2B1911;
+}
+
+.coffee-lot-card.active {
+  border-width: 2px;
+  box-shadow: 5px 5px 0 #C86D3B;
+}
+
+/* Perforated bag-stitch top strip */
+.coffee-lot-perforation {
+  padding: 0.45rem 0.85rem;
+  background: #EAE2D3;
+  border-bottom: 1.5px dashed #2B1911;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.71rem;
+}
+
+.coffee-lot-body {
+  padding: 0.95rem 1rem 1.05rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.58rem;
+  flex: 1;
+}
+
+.coffee-lot-photo {
+  margin: -0.2rem 0 0.1rem;
+}
+
+.coffee-lot-photo figcaption {
+  font-size: 0.68rem;
+}
+
+.coffee-lot-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.coffee-lot-card h4 {
+  font-size: 0.98rem;
+  color: #2B1911;
+  line-height: 1.36;
+}
+
+.coffee-lot-specs {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #6E5346;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.65rem;
+}
+
+.coffee-lot-notes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.coffee-lot-foot {
+  margin-top: auto;
+  padding-top: 0.62rem;
+  border-top: 1px solid #DFD4C0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.coffee-mini-btn {
+  padding: 0.22rem 0.52rem;
+  border: 1px solid #2B1911;
+  border-radius: 3px;
+  background: #F4EFE6;
+  font-size: 0.73rem;
+  font-weight: 600;
+}
+
+.coffee-mini-btn.on {
+  background: #2C6E63;
+  color: #FAF7F1;
+}
+
+.coffee-mini-btn.wish {
+  background: #B23A2C;
+  color: #FAF7F1;
+}
+
+/* Additional Lab Interactive & Telemetry Helpers */
+.coffee-anchor-row {
+  margin-top: 1.15rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.coffee-anchor-pill {
+  padding: 0.36rem 0.76rem;
+  border: 1.5px solid #2B1911;
+  border-radius: 3px;
+  background: #FAF7F1;
+  color: #2B1911;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.coffee-anchor-pill:hover {
+  background: #2B1911;
+  color: #FAF7F1;
+}
+
+.coffee-belt-banner {
+  margin-bottom: 1.05rem;
+  padding: 0.9rem 1.15rem;
+  background: #FAF7F1;
+  border: 1.5px solid #2B1911;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(240px, 0.75fr);
+  gap: 1.1rem;
+  align-items: center;
+}
+
+.coffee-belt-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.coffee-belt-pin {
+  cursor: pointer;
+}
+
+.coffee-roast-node {
+  cursor: pointer;
+}
+
+.coffee-tagline-quote {
+  padding: 0.68rem 0.92rem;
+  background: #F4EFE6;
+  border-left: 4px solid #C86D3B;
+  border-radius: 0 4px 4px 0;
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  color: #3A2218;
+  line-height: 1.62;
+}
+
+.coffee-brew-apparatus {
+  padding: 0.62rem 0.85rem;
+  background: #EAE2D3;
+  border: 1.5px solid #2B1911;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  font-size: 0.84rem;
+}
+
+.coffee-roaster-note {
+  padding: 0.75rem 0.92rem;
+  background: #F4EFE6;
+  border: 1px dashed #A68E80;
+  border-radius: 4px;
+  font-size: 0.83rem;
+  color: #4E3529;
+  line-height: 1.65;
+}
+
+@media (max-width: 1100px) {
+  .coffee-hero-body,
+  .coffee-process-inspector,
+  .coffee-bench-grid,
+  .coffee-belt-banner {
+    grid-template-columns: 1fr;
+  }
+  .coffee-process-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .coffee-origin-grid,
+  .coffee-lot-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .coffee-topbar {
+    padding: 0.7rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .coffee-container {
+    padding: 0 1rem;
+  }
+  .coffee-swiss-kpis,
+  .coffee-proc-spec-grid,
+  .coffee-origin-grid,
+  .coffee-lot-grid,
+  .coffee-recipe-matrix {
+    grid-template-columns: 1fr;
+  }
+  .coffee-kpi-cell {
+    border-right: none;
+    border-bottom: 1px solid #2B1911;
+  }
+  .coffee-process-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .coffee-sensory-box {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,862 @@
+/* ==========================================================================
+   「醺典 · 中外酒馆」Bespoke Dark Cellar & Amber Gold Aesthetic System
+   Obsidian #13100E · Cask #1E1815 · Amber Gold #D4943A · Burgundy #7A2332
+   ========================================================================== */
+
+.wine-hall {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 85% 42% at 50% -4%, rgba(212, 148, 58, 0.16), transparent 68%),
+    radial-gradient(circle at 88% 18%, rgba(122, 35, 50, 0.22), transparent 46%),
+    linear-gradient(180deg, #13100E 0%, #171310 45%, #110E0C 100%);
+  color: #F5EDE2;
+  padding-bottom: 4.5rem;
+}
+
+.wine-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 45;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.78rem 1.75rem;
+  background: rgba(19, 16, 14, 0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(212, 148, 58, 0.24);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+}
+
+.wine-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #8D293A 0%, #5E1824 100%);
+  color: #F6E9D2;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 0.96rem;
+  letter-spacing: 0.06em;
+  border: 1px solid rgba(212, 148, 58, 0.65);
+  box-shadow: 0 0 18px rgba(122, 35, 50, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  flex-shrink: 0;
+}
+
+.wine-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 148, 58, 0.26);
+  background: rgba(39, 32, 28, 0.72);
+  color: #DFCBB5;
+  font-size: 0.83rem;
+  transition: all 0.2s ease;
+}
+
+.wine-nav-pill:hover {
+  border-color: #D4943A;
+  color: #FFF7EA;
+  background: rgba(212, 148, 58, 0.18);
+  box-shadow: 0 0 14px rgba(212, 148, 58, 0.16);
+}
+
+.wine-nav-pill.passport {
+  border-color: rgba(212, 148, 58, 0.55);
+  background: linear-gradient(135deg, rgba(122, 35, 50, 0.42), rgba(212, 148, 58, 0.2));
+  color: #F7E8D0;
+}
+
+.wine-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+/* Hero Vault */
+.wine-hero {
+  margin-top: 1.8rem;
+  padding: 2.3rem 2.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 148, 58, 0.3);
+  background:
+    radial-gradient(circle at 82% 38%, rgba(212, 148, 58, 0.16), transparent 52%),
+    radial-gradient(circle at 18% 90%, rgba(122, 35, 50, 0.26), transparent 48%),
+    linear-gradient(145deg, rgba(34, 27, 23, 0.94) 0%, rgba(21, 17, 15, 0.96) 100%);
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 236, 200, 0.08);
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.85fr);
+  gap: 2.2rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wine-status-ribbon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.82rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 148, 58, 0.45);
+  background: rgba(212, 148, 58, 0.12);
+  color: #E8B15C;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.9rem;
+}
+
+.wine-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #E8B15C;
+  box-shadow: 0 0 8px #D4943A;
+}
+
+.wine-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 3vw, 2.55rem);
+  color: #FAF2E6;
+  line-height: 1.24;
+  letter-spacing: 0.02em;
+}
+
+.wine-hero-title span {
+  color: #E4A84F;
+}
+
+.wine-hero-lead {
+  margin-top: 0.9rem;
+  color: #CDBBA7;
+  font-size: 0.97rem;
+  line-height: 1.75;
+  max-width: 66ch;
+}
+
+.wine-hero-metrics {
+  margin-top: 1.35rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.wine-metric-tile {
+  padding: 0.72rem 0.85rem;
+  border-radius: 12px;
+  background: rgba(19, 16, 14, 0.66);
+  border: 1px solid rgba(212, 148, 58, 0.2);
+}
+
+.wine-metric-tile strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.22rem;
+  color: #EBB35E;
+}
+
+.wine-metric-tile span {
+  font-size: 0.75rem;
+  color: #A79684;
+}
+
+.wine-hero-anchors {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.wine-anchor-btn {
+  padding: 0.42rem 0.88rem;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 148, 58, 0.32);
+  background: rgba(212, 148, 58, 0.09);
+  color: #EAD8C1;
+  font-size: 0.82rem;
+}
+
+.wine-anchor-btn:hover {
+  background: #D4943A;
+  border-color: #D4943A;
+  color: #16110E;
+  font-weight: 600;
+}
+
+.wine-hero-emblem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(212, 148, 58, 0.22);
+  background: radial-gradient(circle at 50% 45%, rgba(212, 148, 58, 0.14), rgba(15, 12, 10, 0.78) 72%);
+}
+
+.wine-hero-emblem-caption {
+  margin-top: 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: #B9A48F;
+  text-align: center;
+}
+
+/* Section Headers */
+.wine-sec-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(212, 148, 58, 0.2);
+  margin-bottom: 1.35rem;
+}
+
+.wine-sec-kicker {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #D4943A;
+  margin-bottom: 0.25rem;
+}
+
+.wine-sec-head h2 {
+  font-size: 1.48rem;
+  color: #F7EFE4;
+}
+
+.wine-sec-sub {
+  font-size: 0.86rem;
+  color: #A89683;
+}
+
+/* Pillar Switcher Cards */
+.wine-pillar-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.wine-pillar-tab {
+  padding: 0.42rem 0.92rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212, 148, 58, 0.28);
+  background: rgba(32, 26, 22, 0.85);
+  color: #D3C2AF;
+  font-size: 0.83rem;
+}
+
+.wine-pillar-tab:hover {
+  border-color: #D4943A;
+  color: #FFF6E8;
+}
+
+.wine-pillar-tab.active {
+  background: linear-gradient(135deg, #D4943A, #B37222);
+  border-color: #E7AF5A;
+  color: #16110D;
+  font-weight: 600;
+}
+
+.wine-pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+
+.wine-pillar-card {
+  text-align: left;
+  padding: 1.4rem 1.45rem;
+  border-radius: 16px;
+  border: 1px solid rgba(212, 148, 58, 0.22);
+  background: linear-gradient(165deg, rgba(35, 28, 24, 0.92), rgba(22, 18, 15, 0.95));
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.36);
+  display: flex;
+  flex-direction: column;
+  gap: 0.78rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.wine-pillar-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--pillar-accent, #D4943A);
+  opacity: 0.85;
+}
+
+.wine-pillar-card:hover,
+.wine-pillar-card.selected {
+  border-color: rgba(212, 148, 58, 0.62);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(212, 148, 58, 0.25);
+}
+
+.wine-pillar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.wine-pillar-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: #D4943A;
+}
+
+.wine-abv-pill {
+  padding: 0.16rem 0.56rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  background: rgba(212, 148, 58, 0.15);
+  border: 1px solid rgba(212, 148, 58, 0.38);
+  color: #F0BC6B;
+}
+
+.wine-pillar-card h3 {
+  font-size: 1.16rem;
+  color: #F8F0E5;
+}
+
+.wine-pillar-craft {
+  font-size: 0.8rem;
+  color: #DFC39D;
+  padding: 0.48rem 0.65rem;
+  border-radius: 8px;
+  background: rgba(212, 148, 58, 0.08);
+  border-left: 2.5px solid var(--pillar-accent, #D4943A);
+}
+
+.wine-pillar-summary {
+  font-size: 0.85rem;
+  color: #B9A795;
+  line-height: 1.66;
+}
+
+.wine-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.38rem;
+  margin-top: auto;
+}
+
+.wine-mini-tag {
+  padding: 0.18rem 0.52rem;
+  border-radius: 5px;
+  font-size: 0.74rem;
+  background: rgba(255, 244, 228, 0.06);
+  border: 1px solid rgba(212, 148, 58, 0.2);
+  color: #D8C7B4;
+}
+
+/* Baijiu 12-Aroma Interactive Wheel & Inspector */
+.wine-baijiu-workbench {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(0, 1.25fr);
+  gap: 1.4rem;
+  align-items: stretch;
+}
+
+.wine-wheel-panel,
+.wine-aroma-dossier {
+  padding: 1.4rem 1.5rem;
+  border-radius: 18px;
+  border: 1px solid rgba(212, 148, 58, 0.24);
+  background: linear-gradient(160deg, rgba(33, 26, 22, 0.94), rgba(20, 16, 14, 0.96));
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.42);
+}
+
+.wine-wheel-svg-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wine-wheel-svg {
+  width: min(350px, 100%);
+  height: auto;
+  overflow: visible;
+}
+
+.wine-wheel-sector {
+  cursor: pointer;
+  transition: opacity 0.18s ease, filter 0.18s ease;
+}
+
+.wine-wheel-sector:hover {
+  filter: brightness(1.18);
+}
+
+.wine-aroma-chip-grid {
+  margin-top: 0.95rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.42rem;
+}
+
+.wine-aroma-chip {
+  padding: 0.34rem 0.45rem;
+  border-radius: 7px;
+  font-size: 0.77rem;
+  border: 1px solid rgba(212, 148, 58, 0.2);
+  background: rgba(19, 16, 14, 0.65);
+  color: #CBB9A6;
+  text-align: center;
+}
+
+.wine-aroma-chip:hover {
+  border-color: #D4943A;
+  color: #FAF1E4;
+}
+
+.wine-aroma-chip.active {
+  background: rgba(212, 148, 58, 0.24);
+  border-color: #E7AF5A;
+  color: #FFF6E6;
+  font-weight: 600;
+}
+
+.wine-aroma-dossier {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.wine-aroma-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(212, 148, 58, 0.18);
+}
+
+.wine-aroma-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.wine-aroma-title-row h3 {
+  font-size: 1.38rem;
+  color: #FAF1E4;
+}
+
+.wine-aroma-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.wine-spec-box {
+  padding: 0.78rem 0.92rem;
+  border-radius: 10px;
+  background: rgba(17, 14, 12, 0.72);
+  border: 1px solid rgba(212, 148, 58, 0.18);
+}
+
+.wine-spec-box.full {
+  grid-column: 1 / -1;
+}
+
+.wine-spec-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.71rem;
+  letter-spacing: 0.08em;
+  color: #D4943A;
+  margin-bottom: 0.28rem;
+}
+
+.wine-spec-box p {
+  font-size: 0.86rem;
+  color: #E5D7C7;
+  line-height: 1.6;
+}
+
+.wine-sensory-quote {
+  padding: 0.88rem 1.05rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(122, 35, 50, 0.28), rgba(212, 148, 58, 0.11));
+  border: 1px solid rgba(212, 148, 58, 0.3);
+  color: #F4E6D3;
+  font-family: var(--font-serif);
+  font-size: 0.94rem;
+  line-height: 1.68;
+}
+
+/* Whisky Peat x Sherry Scatter Matrix */
+.wine-whisky-workbench {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.85fr);
+  gap: 1.4rem;
+  align-items: stretch;
+}
+
+.wine-scatter-card,
+.wine-whisky-inspector {
+  padding: 1.35rem 1.45rem;
+  border-radius: 18px;
+  border: 1px solid rgba(212, 148, 58, 0.24);
+  background: linear-gradient(160deg, rgba(31, 25, 21, 0.95), rgba(19, 15, 13, 0.97));
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.42);
+}
+
+.wine-scatter-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.wine-scatter-node {
+  cursor: pointer;
+}
+
+.wine-whisky-inspector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.wine-meter-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.32rem;
+}
+
+.wine-meter-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #D8C7B4;
+}
+
+.wine-meter-track {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 242, 224, 0.09);
+  overflow: hidden;
+}
+
+.wine-meter-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.25s ease;
+}
+
+.wine-whisky-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
+/* Sommelier Specimen Dossier & Cellar Rack */
+.wine-dossier-panel {
+  padding: 1.7rem 1.85rem;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 148, 58, 0.42);
+  background:
+    radial-gradient(circle at 90% 14%, rgba(212, 148, 58, 0.14), transparent 46%),
+    linear-gradient(155deg, rgba(36, 28, 24, 0.96), rgba(20, 16, 14, 0.98));
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.52);
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(270px, 0.75fr);
+  gap: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.wine-dossier-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.55rem;
+}
+
+.wine-dossier-title {
+  font-size: clamp(1.32rem, 2.2vw, 1.72rem);
+  color: #FAF2E6;
+}
+
+.wine-dossier-origin {
+  margin-top: 0.3rem;
+  font-size: 0.88rem;
+  color: #C7B39E;
+}
+
+.wine-dossier-tagline {
+  margin-top: 0.75rem;
+  padding: 0.68rem 0.92rem;
+  border-left: 3px solid #D4943A;
+  background: rgba(212, 148, 58, 0.09);
+  border-radius: 0 8px 8px 0;
+  color: #F2DEC2;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+}
+
+.wine-dossier-craft-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.wine-ritual-grid {
+  margin-top: 0.95rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  padding: 0.9rem;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 148, 58, 0.22);
+  background: rgba(15, 12, 10, 0.65);
+}
+
+.wine-ritual-item small {
+  display: block;
+  font-size: 0.72rem;
+  color: #D4943A;
+  font-family: var(--font-mono);
+}
+
+.wine-ritual-item span {
+  font-size: 0.82rem;
+  color: #E4D6C6;
+}
+
+.wine-dossier-note {
+  margin-top: 0.9rem;
+  font-size: 0.86rem;
+  color: #B7A491;
+  line-height: 1.7;
+}
+
+.wine-dossier-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(212, 148, 58, 0.2);
+  background: rgba(16, 13, 11, 0.74);
+}
+
+.wine-liquor-showcase {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(212, 148, 58, 0.16);
+}
+
+.wine-liquor-orb {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2.5px solid #F5EDE2;
+  box-shadow: 0 0 16px rgba(212, 148, 58, 0.35), inset 0 3px 6px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+}
+
+.wine-radar-svg {
+  width: 220px;
+  height: 205px;
+  overflow: visible;
+}
+
+.wine-footprint-actions {
+  display: flex;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.wine-fp-btn {
+  flex: 1;
+  padding: 0.52rem 0.7rem;
+  border-radius: 9px;
+  border: 1px solid rgba(212, 148, 58, 0.35);
+  background: rgba(39, 32, 28, 0.9);
+  color: #EAD8C3;
+  font-size: 0.83rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.wine-fp-btn:hover {
+  border-color: #EBB35E;
+  color: #FFF8EC;
+}
+
+.wine-fp-btn.tasted {
+  background: linear-gradient(135deg, #D4943A, #A86B1F);
+  border-color: #F0BC6B;
+  color: #16110D;
+  font-weight: 700;
+}
+
+.wine-fp-btn.wished {
+  background: rgba(122, 35, 50, 0.65);
+  border-color: #C75268;
+  color: #FCECF0;
+}
+
+/* Specimen Cards Rack */
+.wine-specimen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+.wine-specimen-card {
+  padding: 1.2rem 1.25rem;
+  border-radius: 15px;
+  border: 1px solid rgba(212, 148, 58, 0.2);
+  background: linear-gradient(165deg, rgba(31, 25, 21, 0.92), rgba(20, 16, 14, 0.95));
+  display: flex;
+  flex-direction: column;
+  gap: 0.68rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.wine-specimen-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 148, 58, 0.5);
+}
+
+.wine-specimen-card.active {
+  border-color: #E7AF5A;
+  box-shadow: 0 0 0 1.5px rgba(212, 148, 58, 0.45), 0 14px 32px rgba(0, 0, 0, 0.48);
+  background: linear-gradient(165deg, rgba(44, 34, 28, 0.95), rgba(24, 19, 16, 0.98));
+}
+
+.wine-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.wine-card-head-left {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.wine-specimen-card h4 {
+  font-size: 1.04rem;
+  color: #F7EFE3;
+  line-height: 1.35;
+}
+
+.wine-card-origin {
+  font-size: 0.78rem;
+  color: #A89683;
+}
+
+.wine-card-tagline {
+  font-size: 0.82rem;
+  color: #CDBBA7;
+  line-height: 1.56;
+}
+
+.wine-card-footer {
+  margin-top: auto;
+  padding-top: 0.65rem;
+  border-top: 1px solid rgba(212, 148, 58, 0.14);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.wine-card-mini-actions {
+  display: flex;
+  gap: 0.38rem;
+}
+
+.wine-mini-btn {
+  padding: 0.24rem 0.56rem;
+  border-radius: 6px;
+  border: 1px solid rgba(212, 148, 58, 0.28);
+  background: rgba(19, 16, 14, 0.7);
+  color: #DECBB6;
+  font-size: 0.75rem;
+}
+
+.wine-mini-btn.on {
+  background: #D4943A;
+  border-color: #EBB35E;
+  color: #16110D;
+  font-weight: 600;
+}
+
+.wine-mini-btn.wish-on {
+  background: #7A2332;
+  border-color: #B9485C;
+  color: #FCEEF1;
+}
+
+@media (max-width: 1040px) {
+  .wine-hero,
+  .wine-baijiu-workbench,
+  .wine-whisky-workbench,
+  .wine-dossier-panel {
+    grid-template-columns: 1fr;
+  }
+  .wine-pillar-grid,
+  .wine-specimen-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .wine-topbar {
+    padding: 0.7rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .wine-container {
+    padding: 0 1rem;
+  }
+  .wine-hero {
+    padding: 1.5rem 1.25rem;
+  }
+  .wine-hero-metrics,
+  .wine-pillar-grid,
+  .wine-specimen-grid,
+  .wine-aroma-specs-grid,
+  .wine-dossier-craft-grid,
+  .wine-ritual-grid {
+    grid-template-columns: 1fr;
+  }
+  .wine-aroma-chip-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,1813 @@
+/* ==========================================================================
+   茗典 · 中华茶馆 — Bespoke Song-Dynasty Folio & Sensory Museum Stylesheet
+   美学标准：「天青素宣 · 宋韵山岚」(Song-Dynasty Celadon & Rice-Paper Folio)
+   Palette:
+     素宣纸白 #F7F5EE · 宣纸暖灰 #EFECE2 · 汝窑天青 #35685F · 松烟浓墨 #1E2421
+     岩茶琥珀 #9A5B25 · 朱泥紫砂 #A6402C · 明前芽绿 #588B57
+   ========================================================================== */
+
+.tea-hall {
+  --tea-paper: #F7F5EE;
+  --tea-parchment: #EFECE2;
+  --tea-parchment-deep: #E5E0D2;
+  --tea-ivory: #FCFBF7;
+  --tea-celadon: #35685F;
+  --tea-celadon-deep: #264E47;
+  --tea-celadon-mist: #DCE7E3;
+  --tea-celadon-soft: rgba(53, 104, 95, 0.11);
+  --tea-ink: #1E2421;
+  --tea-ink-secondary: #3A433E;
+  --tea-ink-muted: #68736D;
+  --tea-ink-faint: #929C96;
+  --tea-amber: #9A5B25;
+  --tea-amber-soft: rgba(154, 91, 37, 0.12);
+  --tea-cinnabar: #A6402C;
+  --tea-cinnabar-soft: rgba(166, 64, 44, 0.1);
+  --tea-bud: #588B57;
+  --tea-bud-soft: rgba(88, 139, 87, 0.12);
+  --tea-rule-outer: #C7BFAE;
+  --tea-rule-inner: #DFDACB;
+
+  min-height: 100vh;
+  color: var(--tea-ink);
+  background-color: var(--tea-paper);
+  background-image:
+    radial-gradient(ellipse 90% 50% at 50% 0%, rgba(53, 104, 95, 0.055), transparent 70%),
+    radial-gradient(ellipse 70% 45% at 85% 25%, rgba(154, 91, 37, 0.035), transparent 65%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(30, 36, 33, 0.012) 0px,
+      rgba(30, 36, 33, 0.012) 1px,
+      transparent 1px,
+      transparent 28px
+    );
+}
+
+/* ==========================================================================
+   1. Sticky Song-Folio Header & 5-Space Navigation Bar
+   ========================================================================== */
+
+.tea-shell-header {
+  position: sticky;
+  top: 0;
+  z-index: 45;
+  background: rgba(247, 245, 238, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--tea-rule-outer);
+  box-shadow: 0 4px 20px rgba(30, 36, 33, 0.05);
+}
+
+.tea-topbar-row {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0.68rem 1.5rem 0.58rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tea-topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.tea-back-portal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  padding: 0.38rem 0.78rem;
+  border-radius: 999px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-ivory);
+  color: var(--tea-ink-secondary);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.tea-back-portal-btn:hover {
+  border-color: var(--tea-celadon);
+  color: var(--tea-celadon);
+  background: var(--tea-parchment);
+}
+
+.tea-brand-divider {
+  width: 1px;
+  height: 26px;
+  background: var(--tea-rule-outer);
+}
+
+.tea-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 0.72rem;
+}
+
+.tea-cinnabar-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: var(--tea-cinnabar);
+  color: var(--tea-ivory);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-radius: 3px;
+  border: 1.5px solid rgba(252, 251, 247, 0.88);
+  box-shadow: 0 0 0 1.5px var(--tea-cinnabar), 0 3px 9px rgba(166, 64, 44, 0.22);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.tea-cinnabar-seal.sm {
+  width: 26px;
+  height: 26px;
+  font-size: 0.78rem;
+}
+
+.tea-cinnabar-seal.vertical {
+  width: auto;
+  height: auto;
+  writing-mode: vertical-rl;
+  padding: 0.36rem 0.24rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  line-height: 1.15;
+}
+
+.tea-brand-titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.tea-brand-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  color: var(--tea-ink-muted);
+  text-transform: uppercase;
+}
+
+.tea-brand-main {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.tea-brand-main h1 {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--tea-ink);
+  letter-spacing: 0.03em;
+}
+
+.tea-brand-sub {
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  color: var(--tea-celadon);
+  padding: 0.06rem 0.48rem;
+  border-radius: 3px;
+  background: var(--tea-celadon-soft);
+  border: 1px solid rgba(53, 104, 95, 0.22);
+}
+
+.tea-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tea-hall-switcher {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid var(--tea-rule-inner);
+  background: var(--tea-parchment);
+  padding: 0.16rem;
+  gap: 0.15rem;
+}
+
+.tea-hall-switch-btn {
+  padding: 0.24rem 0.62rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  color: var(--tea-ink-secondary);
+  white-space: nowrap;
+}
+
+.tea-hall-switch-btn:hover {
+  background: var(--tea-ivory);
+  color: var(--tea-ink);
+}
+
+.tea-hall-switch-btn.wine:hover {
+  color: #8E5616;
+}
+
+.tea-hall-switch-btn.coffee:hover {
+  color: #9A4D23;
+}
+
+.tea-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.38rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-ivory);
+  color: var(--tea-ink);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.tea-action-btn:hover {
+  border-color: var(--tea-celadon);
+  color: var(--tea-celadon);
+}
+
+.tea-action-btn.passport {
+  border-color: rgba(53, 104, 95, 0.42);
+  background: linear-gradient(180deg, #FCFBF7 0%, #EEF4F1 100%);
+  color: var(--tea-celadon-deep);
+}
+
+.tea-passport-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.04rem 0.44rem;
+  border-radius: 999px;
+  background: var(--tea-celadon);
+  color: var(--tea-ivory);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+/* 5-Space Folio Navigation Bar */
+.tea-subnav-bar {
+  border-top: 1px solid var(--tea-rule-inner);
+  background: linear-gradient(180deg, rgba(239, 236, 226, 0.62) 0%, rgba(247, 245, 238, 0.88) 100%);
+}
+
+.tea-subnav-inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0.75rem;
+  overflow-x: auto;
+}
+
+.tea-folio-tabs {
+  display: flex;
+  align-items: stretch;
+  gap: 0.25rem;
+}
+
+.tea-folio-tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.52rem;
+  padding: 0.62rem 1rem 0.58rem;
+  color: var(--tea-ink-secondary);
+  border-bottom: 2.5px solid transparent;
+  white-space: nowrap;
+  transition: color 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.tea-folio-tab:hover {
+  color: var(--tea-celadon);
+  background: rgba(53, 104, 95, 0.05);
+}
+
+.tea-folio-tab.active {
+  color: var(--tea-celadon-deep);
+  border-bottom-color: var(--tea-celadon);
+  background: rgba(252, 251, 247, 0.78);
+  font-weight: 600;
+}
+
+.tea-folio-tab-vol {
+  font-family: var(--font-serif);
+  font-size: 0.72rem;
+  padding: 0.08rem 0.36rem;
+  border-radius: 3px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-ivory);
+  color: var(--tea-ink-muted);
+}
+
+.tea-folio-tab.active .tea-folio-tab-vol {
+  border-color: var(--tea-celadon);
+  background: var(--tea-celadon);
+  color: var(--tea-ivory);
+}
+
+.tea-folio-tab-name {
+  font-family: var(--font-serif);
+  font-size: 0.94rem;
+}
+
+.tea-folio-tab-en {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--tea-ink-faint);
+  letter-spacing: 0.04em;
+}
+
+.tea-subnav-context {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.76rem;
+  color: var(--tea-ink-muted);
+  white-space: nowrap;
+  padding: 0.35rem 0;
+}
+
+/* ==========================================================================
+   2. Song-Dynasty Folio Containers, Running Heads & Double Hairlines
+   ========================================================================== */
+
+.tea-main-stage {
+  max-width: 1380px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.35rem 1.5rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.45rem;
+}
+
+.tea-spectrum-view,
+.tea-terroir-view,
+.tea-ware-view,
+.tea-chronicles-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.45rem;
+}
+
+/* Song-edition Double Hairline Folio Card */
+.tea-folio-panel {
+  position: relative;
+  background: var(--tea-ivory);
+  border: 1px solid var(--tea-rule-outer);
+  border-radius: 8px;
+  box-shadow:
+    inset 0 0 0 3px var(--tea-ivory),
+    inset 0 0 0 4px var(--tea-rule-inner),
+    0 6px 22px rgba(30, 36, 33, 0.045);
+  padding: 1.35rem 1.5rem;
+}
+
+.tea-folio-panel.parchment {
+  background: linear-gradient(180deg, #FAF8F2 0%, #F3EFE4 100%);
+}
+
+/* Song-Dynasty Running Head (鱼尾版心眉批) */
+.tea-running-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.72rem;
+  margin-bottom: 1.1rem;
+  border-bottom: 2px double var(--tea-rule-outer);
+  flex-wrap: wrap;
+}
+
+.tea-running-head-left {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.tea-fishtail {
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--tea-celadon);
+  letter-spacing: 0.1em;
+  padding: 0.12rem 0.52rem;
+  background: var(--tea-celadon-soft);
+  border-left: 2.5px solid var(--tea-celadon);
+  border-right: 2.5px solid var(--tea-celadon);
+}
+
+.tea-running-title {
+  font-family: var(--font-serif);
+  font-size: 1.24rem;
+  font-weight: 700;
+  color: var(--tea-ink);
+  letter-spacing: 0.02em;
+}
+
+.tea-running-sub {
+  font-size: 0.84rem;
+  color: var(--tea-ink-muted);
+}
+
+.tea-running-head-right {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--tea-ink-muted);
+  flex-wrap: wrap;
+}
+
+/* Porcelain Liquor Cup Badge */
+.tea-liquor-cup {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  filter: drop-shadow(0 3px 6px rgba(30, 36, 33, 0.14));
+  transition: transform 0.22s ease, filter 0.22s ease;
+}
+
+.tea-liquor-cup.interactive:hover {
+  transform: scale(1.07);
+  filter: drop-shadow(0 5px 12px rgba(30, 36, 33, 0.22));
+}
+
+/* Editorial Photo & Botanical Ink-Wash Fallback */
+.tea-photo-frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid var(--tea-rule-outer);
+  background: linear-gradient(145deg, #F5F2E8 0%, #E7E3D5 100%);
+}
+
+.tea-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.tea-photo-frame:hover .tea-photo-img {
+  transform: scale(1.025);
+}
+
+.tea-photo-fallback {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 1.15rem;
+  background:
+    radial-gradient(circle at 75% 26%, rgba(53, 104, 95, 0.12), transparent 58%),
+    linear-gradient(165deg, #F9F7F0 0%, #ECE8DA 100%);
+  overflow: hidden;
+}
+
+.tea-photo-fallback-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.tea-photo-fallback-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.tea-photo-fallback-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--tea-ink-muted);
+  background: rgba(252, 251, 247, 0.82);
+  padding: 0.14rem 0.48rem;
+  border-radius: 3px;
+  border: 1px solid var(--tea-rule-inner);
+}
+
+.tea-photo-fallback-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.tea-photo-fallback-title {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--tea-ink);
+  text-shadow: 0 1px 0 rgba(252, 251, 247, 0.9);
+}
+
+.tea-photo-fallback-sub {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--tea-ink-secondary);
+  margin-top: 0.12rem;
+}
+
+.tea-photo-caption-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  padding: 0.45rem 0.75rem;
+  background: linear-gradient(180deg, transparent 0%, rgba(24, 30, 27, 0.72) 100%);
+  color: #FCFBF7;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+/* ==========================================================================
+   3. 卷一 · TeaSpectrumView (7-Cup Chromatic Bar + 2D Star-Map + Craft Flow)
+   ========================================================================== */
+
+.tea-chromatic-bar {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.tea-chromatic-cup-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.42rem;
+  padding: 0.9rem 0.55rem 0.78rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-inner);
+  background: linear-gradient(180deg, #FCFBF7 0%, #F4F1E7 100%);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.tea-chromatic-cup-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--tea-celadon);
+  box-shadow: 0 6px 16px rgba(30, 36, 33, 0.08);
+}
+
+.tea-chromatic-cup-card.active {
+  border-color: var(--tea-celadon);
+  background: linear-gradient(180deg, #F6FAF8 0%, #E7F0EC 100%);
+  box-shadow: 0 0 0 2px rgba(53, 104, 95, 0.2), 0 8px 18px rgba(53, 104, 95, 0.12);
+}
+
+.tea-chromatic-cup-name {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--tea-ink);
+}
+
+.tea-chromatic-cup-ferm {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--tea-celadon);
+  background: rgba(53, 104, 95, 0.09);
+  padding: 0.08rem 0.42rem;
+  border-radius: 999px;
+}
+
+.tea-chromatic-cup-liquor {
+  font-size: 0.74rem;
+  color: var(--tea-ink-secondary);
+  line-height: 1.35;
+}
+
+.tea-chromatic-cup-count {
+  font-size: 0.7rem;
+  color: var(--tea-ink-muted);
+}
+
+/* 2D Scatter Star-Map Layout */
+.tea-starmap-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.85fr) minmax(300px, 0.95fr);
+  gap: 1.15rem;
+  align-items: stretch;
+}
+
+.tea-starmap-canvas-wrap {
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-outer);
+  background:
+    radial-gradient(circle at 22% 78%, rgba(88, 139, 87, 0.08), transparent 45%),
+    radial-gradient(circle at 55% 32%, rgba(154, 91, 37, 0.08), transparent 48%),
+    radial-gradient(circle at 86% 24%, rgba(166, 64, 44, 0.07), transparent 44%),
+    linear-gradient(180deg, #FCFBF7 0%, #F3EFE4 100%);
+  padding: 0.65rem;
+  overflow: hidden;
+}
+
+.tea-starmap-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+.tea-star-node {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.tea-star-node circle.node-core {
+  transition: r 0.16s ease, stroke-width 0.16s ease;
+}
+
+.tea-star-node:hover circle.node-core {
+  stroke-width: 2.6px;
+}
+
+.tea-starmap-inspector {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.95rem;
+  padding: 1.15rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-outer);
+  background: linear-gradient(180deg, #FCFBF7 0%, #F4F0E5 100%);
+}
+
+.tea-inspector-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.tea-metric-tile {
+  padding: 0.55rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid var(--tea-rule-inner);
+  background: var(--tea-ivory);
+}
+
+.tea-metric-tile small {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--tea-ink-muted);
+}
+
+.tea-metric-tile strong {
+  font-family: var(--font-serif);
+  font-size: 0.96rem;
+  color: var(--tea-ink);
+}
+
+/* Biochemistry & Craft Flow Comparator */
+.tea-craft-flow-chain {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+}
+
+.tea-craft-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.34rem 0.72rem;
+  border-radius: 5px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-ivory);
+  font-size: 0.82rem;
+  color: var(--tea-ink-secondary);
+}
+
+.tea-craft-step.watershed {
+  border-color: var(--tea-cinnabar);
+  background: var(--tea-cinnabar-soft);
+  color: var(--tea-cinnabar);
+  font-weight: 600;
+}
+
+.tea-craft-step.interactive {
+  cursor: pointer;
+  text-align: left;
+}
+
+.tea-craft-step.interactive:hover,
+.tea-craft-step.interactive.active {
+  border-color: var(--tea-celadon);
+  background: var(--tea-celadon-soft);
+  color: var(--tea-celadon-deep);
+  box-shadow: 0 2px 8px rgba(53, 104, 95, 0.12);
+}
+
+.tea-craft-arrow {
+  color: var(--tea-ink-faint);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.tea-comparator-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 0.95rem;
+}
+
+.tea-cat-matrix-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 1.05rem 1.15rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-inner);
+  background: var(--tea-ivory);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.tea-cat-matrix-card:hover {
+  border-color: var(--tea-celadon);
+  box-shadow: 0 6px 18px rgba(30, 36, 33, 0.06);
+}
+
+.tea-craft-workshop {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-bottom: 1.35rem;
+  padding-bottom: 1.35rem;
+  border-bottom: 2px double var(--tea-rule-outer);
+}
+
+.tea-craft-workshop-tabs {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.tea-craft-workshop-tabs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.38rem;
+  padding: 0.52rem 0.4rem;
+  border: 1px solid var(--tea-rule-outer);
+  border-radius: 6px;
+  background: var(--tea-ivory);
+  color: var(--tea-ink-secondary);
+  font-family: var(--font-serif);
+}
+
+.tea-craft-workshop-tabs button span {
+  color: var(--tea-cinnabar);
+  font-weight: 700;
+}
+
+.tea-craft-workshop-tabs button.active {
+  border-color: var(--tea-celadon);
+  background: var(--tea-celadon);
+  color: var(--tea-ivory);
+}
+
+.tea-craft-workshop-tabs button.active span {
+  color: #fff;
+}
+
+/* ==========================================================================
+   4. 卷二 · TeaTerroirAtlasView (Macro 4-Zones + Micro 20-Mountains Sandbox)
+   ========================================================================== */
+
+.tea-zones-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.tea-zone-folio-card {
+  text-align: left;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-inner);
+  background: var(--tea-ivory);
+  display: flex;
+  flex-direction: column;
+  gap: 0.42rem;
+  transition: border-color 0.18s ease, transform 0.16s ease, box-shadow 0.18s ease;
+}
+
+.tea-zone-folio-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--tea-rule-outer);
+}
+
+.tea-zone-folio-card.active {
+  border-width: 1.5px;
+  background: linear-gradient(180deg, #FCFBF7 0%, #EFECE2 100%);
+  box-shadow: 0 6px 18px rgba(30, 36, 33, 0.08);
+}
+
+.tea-macro-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(290px, 0.85fr);
+  gap: 1.1rem;
+  align-items: stretch;
+}
+
+.tea-sandbox-master-detail {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1.45fr) minmax(330px, 0.95fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.tea-mtn-directory {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  max-height: 620px;
+  padding: 0.85rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-parchment);
+}
+
+.tea-mtn-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.36rem;
+  overflow-y: auto;
+  padding-right: 0.2rem;
+}
+
+.tea-mtn-item-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.52rem 0.68rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: var(--tea-ivory);
+  text-align: left;
+  font-size: 0.83rem;
+}
+
+.tea-mtn-item-btn:hover {
+  border-color: var(--tea-celadon);
+}
+
+.tea-mtn-item-btn.active {
+  background: var(--tea-celadon);
+  color: var(--tea-ivory);
+  border-color: var(--tea-celadon);
+}
+
+.tea-mtn-item-btn.active small {
+  color: rgba(252, 251, 247, 0.82);
+}
+
+.tea-mtn-dossier {
+  display: flex;
+  flex-direction: column;
+  gap: 0.88rem;
+  padding: 1.15rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-ivory);
+  max-height: 620px;
+  overflow-y: auto;
+}
+
+.tea-dossier-kv {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tea-dossier-box {
+  padding: 0.62rem 0.78rem;
+  border-radius: 6px;
+  border: 1px solid var(--tea-rule-inner);
+  background: var(--tea-paper);
+}
+
+.tea-dossier-box h5 {
+  font-size: 0.76rem;
+  color: var(--tea-celadon);
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.04em;
+}
+
+.tea-dossier-box p {
+  font-size: 0.82rem;
+  color: var(--tea-ink-secondary);
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   5. 卷三 · TeaMonographReader & BrewingRitualWidget
+   ========================================================================== */
+
+.tea-monograph-layout {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 1.35rem;
+  align-items: start;
+}
+
+.tea-index-sidebar {
+  position: sticky;
+  top: 112px;
+  max-height: calc(100vh - 132px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.68rem;
+  padding: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-ivory);
+  box-shadow: 0 4px 16px rgba(30, 36, 33, 0.04);
+}
+
+.tea-sidebar-search {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.44rem 0.68rem;
+  border-radius: 6px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-paper);
+}
+
+.tea-sidebar-search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.83rem;
+}
+
+.tea-sidebar-groups {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-right: 0.2rem;
+}
+
+.tea-sidebar-group-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--tea-ink-muted);
+  padding: 0.18rem 0.35rem;
+  border-bottom: 1px solid var(--tea-rule-inner);
+  margin-bottom: 0.3rem;
+}
+
+.tea-sidebar-entry {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.46rem 0.58rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  text-align: left;
+  font-size: 0.84rem;
+  color: var(--tea-ink-secondary);
+}
+
+.tea-sidebar-entry:hover {
+  background: var(--tea-parchment);
+  color: var(--tea-ink);
+}
+
+.tea-sidebar-entry.active {
+  background: var(--tea-celadon-soft);
+  border-color: var(--tea-celadon);
+  color: var(--tea-celadon-deep);
+  font-weight: 600;
+}
+
+/* Monograph Reader Article */
+.tea-monograph-article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.tea-nameplate-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tea-monograph-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--tea-ink);
+  margin-top: 0.25rem;
+}
+
+.tea-monograph-tagline {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--tea-ink-secondary);
+  margin-top: 0.3rem;
+}
+
+.tea-spec-nameplate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.68rem;
+  margin-top: 1rem;
+}
+
+.tea-spec-cell {
+  padding: 0.68rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid var(--tea-rule-inner);
+  background: var(--tea-paper);
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.tea-spec-cell.clickable {
+  cursor: pointer;
+  border-color: rgba(53, 104, 95, 0.35);
+  background: linear-gradient(180deg, #FAF9F4 0%, #EEF4F1 100%);
+}
+
+.tea-spec-cell.clickable:hover {
+  border-color: var(--tea-celadon);
+  box-shadow: 0 3px 10px rgba(53, 104, 95, 0.1);
+}
+
+.tea-spec-label {
+  font-size: 0.72rem;
+  color: var(--tea-ink-muted);
+  font-family: var(--font-mono);
+}
+
+.tea-spec-val {
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--tea-ink);
+}
+
+/* Hero Photo + Porcelain Cup Split */
+.tea-hero-sensory-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.85fr);
+  gap: 1.1rem;
+  align-items: stretch;
+}
+
+.tea-liquor-showcase-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.75rem;
+  padding: 1.35rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-outer);
+  background:
+    radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.95), rgba(239, 236, 226, 0.85) 75%),
+    var(--tea-parchment);
+}
+
+/* 3-State Sensory Evaluation Panel */
+.tea-three-states-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.95rem;
+}
+
+.tea-state-card {
+  position: relative;
+  padding: 1.05rem 1.15rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-outer);
+  background: linear-gradient(180deg, #FCFBF7 0%, #F5F2E8 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.tea-state-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-bottom: 0.48rem;
+  border-bottom: 1px dashed var(--tea-rule-outer);
+}
+
+.tea-state-num {
+  font-family: var(--font-serif);
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.1rem 0.42rem;
+  border-radius: 3px;
+  background: var(--tea-celadon-soft);
+  color: var(--tea-celadon-deep);
+}
+
+/* 4-Axis Taste Bars & Craft Chain */
+.tea-taste-craft-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.1rem;
+}
+
+.tea-radar-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.68rem;
+}
+
+.tea-radar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.24rem;
+}
+
+.tea-radar-row-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 0.83rem;
+}
+
+.tea-radar-track {
+  height: 9px;
+  border-radius: 999px;
+  background: var(--tea-parchment-deep);
+  overflow: hidden;
+}
+
+.tea-radar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.35s ease;
+}
+
+.tea-monograph-craft-explainer {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.92fr);
+  gap: 0.8rem;
+  align-items: stretch;
+}
+
+.tea-monograph-craft-explainer .zw-craft-diagram {
+  margin: 0;
+}
+
+.tea-monograph-craft-copy {
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--tea-rule-outer);
+  border-left: 4px solid var(--tea-celadon);
+  border-radius: 6px;
+  background: var(--tea-paper);
+}
+
+.tea-monograph-craft-copy > span {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--tea-celadon);
+}
+
+.tea-monograph-craft-copy h4 {
+  margin: 0.2rem 0 0.5rem;
+  font-size: 1rem;
+}
+
+.tea-monograph-craft-copy p {
+  margin-top: 0.38rem;
+  color: var(--tea-ink-secondary);
+  font-size: 0.79rem;
+  line-height: 1.55;
+}
+
+/* BrewingRitualWidget */
+.tea-brewing-widget {
+  border-radius: 8px;
+  border: 1.5px solid rgba(53, 104, 95, 0.38);
+  background: linear-gradient(180deg, #FAFDFB 0%, #F3F0E6 100%);
+  padding: 1.25rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.tea-brew-params-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.tea-brew-param-box {
+  padding: 0.72rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-ivory);
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+}
+
+.tea-brew-param-box.vessel-link {
+  cursor: pointer;
+  border-color: var(--tea-celadon);
+  background: linear-gradient(180deg, #FCFBF7 0%, #EAF2EE 100%);
+}
+
+.tea-brew-param-box.vessel-link:hover {
+  box-shadow: 0 4px 12px rgba(53, 104, 95, 0.14);
+  transform: translateY(-1px);
+}
+
+.tea-steep-curve-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.95fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.tea-steep-bars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(56px, 1fr));
+  gap: 0.55rem;
+  align-items: end;
+  min-height: 168px;
+  padding: 1rem 0.85rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-inner);
+  background: var(--tea-ivory);
+}
+
+.tea-steep-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  height: 100%;
+  padding: 0.3rem 0.2rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+
+.tea-steep-col:hover {
+  background: var(--tea-parchment);
+}
+
+.tea-steep-col.active {
+  background: var(--tea-celadon-soft);
+  border-color: var(--tea-celadon);
+}
+
+.tea-steep-sec-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--tea-ink);
+}
+
+.tea-steep-bar-pillar {
+  width: 26px;
+  border-radius: 5px 5px 2px 2px;
+  background: linear-gradient(180deg, var(--tea-celadon) 0%, #6A998E 100%);
+  transition: height 0.28s ease, background 0.2s ease;
+}
+
+.tea-steep-col.active .tea-steep-bar-pillar {
+  background: linear-gradient(180deg, var(--tea-amber) 0%, var(--tea-cinnabar) 100%);
+  box-shadow: 0 3px 10px rgba(154, 91, 37, 0.28);
+}
+
+.tea-steep-num-lbl {
+  font-family: var(--font-serif);
+  font-size: 0.76rem;
+  color: var(--tea-ink-secondary);
+}
+
+.tea-steep-timer-card {
+  padding: 0.95rem 1.05rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-ivory);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.7rem;
+}
+
+.tea-timer-progress-track {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--tea-parchment-deep);
+  overflow: hidden;
+}
+
+.tea-timer-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--tea-celadon), var(--tea-amber));
+  transition: width 0.1s linear;
+}
+
+/* Deep Essay Typography */
+.tea-gazetteer-essay {
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  line-height: 1.95;
+  color: var(--tea-ink);
+  letter-spacing: 0.02em;
+  padding: 0.4rem 0.2rem;
+}
+
+.tea-gazetteer-essay::first-letter {
+  float: left;
+  font-size: 2.45rem;
+  line-height: 1;
+  padding-right: 0.45rem;
+  padding-top: 0.12rem;
+  color: var(--tea-celadon-deep);
+  font-weight: 700;
+}
+
+.tea-spots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 0.75rem;
+}
+
+/* ==========================================================================
+   6. 卷四 · TeaWareGalleryView (Scientific Matcher + 6-Category Cabinet)
+   ========================================================================== */
+
+.tea-matcher-layout {
+  display: grid;
+  grid-template-columns: minmax(290px, 0.92fr) minmax(0, 1.48fr);
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+.tea-matcher-console {
+  padding: 1.05rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-paper);
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.tea-matcher-cat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.48rem;
+}
+
+.tea-matcher-cat-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.52rem;
+  padding: 0.52rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid var(--tea-rule-inner);
+  background: var(--tea-ivory);
+  text-align: left;
+  transition: border-color 0.16s ease, background-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.tea-matcher-cat-btn:hover {
+  border-color: var(--tea-celadon);
+}
+
+.tea-matcher-cat-btn.active {
+  border-color: var(--tea-celadon);
+  background: linear-gradient(180deg, #F6FAF8 0%, #E7F0EC 100%);
+  box-shadow: 0 3px 10px rgba(53, 104, 95, 0.12);
+}
+
+.tea-matcher-select {
+  width: 100%;
+  padding: 0.54rem 0.72rem;
+  border-radius: 6px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-ivory);
+  color: var(--tea-ink);
+  font-size: 0.85rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.tea-matcher-select:focus {
+  border-color: var(--tea-celadon);
+  box-shadow: 0 0 0 3px var(--tea-celadon-soft);
+}
+
+.tea-matcher-readout {
+  padding: 1.15rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-outer);
+  background: linear-gradient(180deg, #FCFBF7 0%, #F4F0E5 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.95rem;
+}
+
+.tea-matcher-ware-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  gap: 0.65rem;
+}
+
+.tea-matcher-ware-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  padding: 0.72rem 0.85rem;
+  border-radius: 6px;
+  border: 1px solid rgba(53, 104, 95, 0.36);
+  background: var(--tea-ivory);
+  text-align: left;
+  transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.tea-matcher-ware-card:hover,
+.tea-matcher-ware-card.active {
+  transform: translateY(-1px);
+  border-color: var(--tea-celadon);
+  background: linear-gradient(180deg, #FCFBF7 0%, #EAF2EE 100%);
+  box-shadow: 0 4px 12px rgba(53, 104, 95, 0.13);
+}
+
+.tea-taboo-callout {
+  padding: 0.78rem 0.95rem;
+  border-radius: 6px;
+  border-left: 3.5px solid var(--tea-cinnabar);
+  background: var(--tea-cinnabar-soft);
+  color: var(--tea-ink);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.tea-ware-cat-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.55rem;
+  margin-bottom: 1.05rem;
+}
+
+.tea-ware-cat-tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem;
+  padding: 0.62rem 0.8rem;
+  border-radius: 7px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-ivory);
+  text-align: left;
+  font-size: 0.84rem;
+  color: var(--tea-ink-secondary);
+}
+
+.tea-ware-cat-tab:hover {
+  border-color: var(--tea-celadon);
+  color: var(--tea-ink);
+}
+
+.tea-ware-cat-tab.active {
+  border-color: var(--tea-celadon);
+  background: var(--tea-celadon);
+  color: var(--tea-ivory);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(53, 104, 95, 0.18);
+}
+
+.tea-ware-avoid-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.74rem;
+  padding: 0.18rem 0.52rem;
+  border-radius: 999px;
+  border: 1px solid rgba(166, 64, 44, 0.36);
+  background: var(--tea-cinnabar-soft);
+  color: var(--tea-cinnabar);
+}
+
+.tea-ware-cabinet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.1rem;
+}
+
+.tea-ware-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-ivory);
+  overflow: hidden;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.tea-ware-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--tea-celadon);
+  box-shadow: 0 8px 22px rgba(30, 36, 33, 0.08);
+}
+
+.tea-ware-card.highlighted {
+  border: 2px solid var(--tea-celadon);
+  box-shadow: 0 0 0 4px rgba(53, 104, 95, 0.16), 0 10px 26px rgba(53, 104, 95, 0.15);
+}
+
+.tea-ware-card-body {
+  padding: 1rem 1.15rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.68rem;
+  flex: 1;
+}
+
+/* ==========================================================================
+   7. 卷五 · TeaChroniclesView (Millennium Timeline + 24 Solar Terms Almanac)
+   ========================================================================== */
+
+.tea-era-ribbon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 0.55rem;
+}
+
+.tea-era-step-btn {
+  position: relative;
+  text-align: left;
+  padding: 0.75rem 0.85rem;
+  border-radius: 7px;
+  border: 1px solid var(--tea-rule-inner);
+  background: var(--tea-paper);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.tea-era-step-btn:hover {
+  border-color: var(--tea-celadon);
+}
+
+.tea-era-step-btn.active {
+  border-color: var(--tea-celadon);
+  background: linear-gradient(180deg, #F6FAF8 0%, #E7F0EC 100%);
+  box-shadow: 0 4px 12px rgba(53, 104, 95, 0.12);
+}
+
+.tea-era-timeline-list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding-left: 1.4rem;
+  border-left: 2px solid var(--tea-rule-outer);
+  margin-left: 0.6rem;
+}
+
+.tea-era-timeline-card {
+  position: relative;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-inner);
+  background: var(--tea-paper);
+}
+
+.tea-era-timeline-card.active {
+  border-color: var(--tea-celadon);
+  background: var(--tea-ivory);
+  box-shadow: 0 6px 18px rgba(30, 36, 33, 0.06);
+}
+
+.tea-era-timeline-dot {
+  position: absolute;
+  left: -1.88rem;
+  top: 1.25rem;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--tea-ivory);
+  border: 2.5px solid var(--tea-celadon);
+}
+
+.tea-era-timeline-card.active .tea-era-timeline-dot {
+  background: var(--tea-cinnabar);
+  border-color: var(--tea-cinnabar);
+  box-shadow: 0 0 0 4px var(--tea-cinnabar-soft);
+}
+
+.tea-era-spotlight {
+  padding: 1.15rem 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-outer);
+  background: linear-gradient(180deg, #FCFBF7 0%, #F3EFE4 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.tea-era-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+/* Four Seasons Almanac */
+.tea-seasons-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.tea-season-tab {
+  padding: 0.95rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-ivory);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.tea-season-tab:hover {
+  border-color: var(--tea-celadon);
+  transform: translateY(-1px);
+}
+
+.tea-season-tab.active {
+  border-width: 2px;
+  background: linear-gradient(180deg, #FCFBF7 0%, #F2EFE4 100%);
+  box-shadow: 0 6px 18px rgba(30, 36, 33, 0.08);
+}
+
+.tea-solar-terms-strip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.tea-solar-term-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.35rem;
+  padding: 0.48rem 0.68rem;
+  border-radius: 6px;
+  border: 1px solid var(--tea-rule-outer);
+  background: var(--tea-ivory);
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--tea-ink);
+}
+
+.tea-poetic-scroll {
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+  border: 1px solid var(--tea-rule-outer);
+  background: linear-gradient(135deg, #FAF8F1 0%, #EFEBE0 100%);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--tea-ink);
+  line-height: 1.8;
+  border-left: 4px solid var(--tea-celadon);
+}
+
+/* ==========================================================================
+   8. Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1180px) {
+  .tea-chromatic-bar {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .tea-starmap-grid {
+    grid-template-columns: 1fr;
+  }
+  .tea-sandbox-master-detail {
+    grid-template-columns: 1fr;
+  }
+  .tea-mtn-directory,
+  .tea-mtn-dossier {
+    max-height: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .tea-macro-layout,
+  .tea-monograph-layout,
+  .tea-hero-sensory-split,
+  .tea-three-states-grid,
+  .tea-taste-craft-split,
+  .tea-steep-curve-stage,
+  .tea-matcher-layout {
+    grid-template-columns: 1fr;
+  }
+  .tea-monograph-craft-explainer {
+    grid-template-columns: 1fr;
+  }
+  .tea-craft-workshop-tabs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .tea-index-sidebar {
+    position: static;
+    max-height: 380px;
+  }
+  .tea-zones-strip,
+  .tea-seasons-tabs,
+  .tea-brew-params-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .tea-spec-nameplate-grid,
+  .tea-era-metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .tea-solar-terms-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .tea-main-stage {
+    padding: 1rem 0.9rem 2.5rem;
+  }
+  .tea-folio-panel {
+    padding: 1rem;
+  }
+  .tea-chromatic-bar,
+  .tea-zones-strip,
+  .tea-seasons-tabs,
+  .tea-brew-params-grid,
+  .tea-spec-nameplate-grid,
+  .tea-era-metrics-grid,
+  .tea-matcher-cat-grid {
+    grid-template-columns: 1fr;
+  }
+  .tea-craft-workshop-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .tea-solar-terms-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
